@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prompt Optimizer</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <header>
+        <div class="brand-mark" aria-hidden="true">✦</div>
+        <div>
+          <h1>Prompt Optimizer</h1>
+          <p>Convierte tus ideas en prompts claros.</p>
+        </div>
+        <button id="settingsButton" class="icon-button" type="button" aria-label="Abrir configuración" title="Configuración">⚙</button>
+      </header>
+
+      <label for="promptInput">Introduce tu prompt</label>
+      <textarea id="promptInput" rows="7" placeholder="Escribe o pega aquí el prompt que quieres optimizar…" autofocus></textarea>
+
+      <button id="optimizeButton" class="primary" type="button">
+        <span class="button-label">✦ Optimizar prompt</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+
+      <section class="result-section" aria-labelledby="resultLabel">
+        <div class="section-heading">
+          <label id="resultLabel" for="resultOutput">Resultado</label>
+          <span id="status" role="status" aria-live="polite"></span>
+        </div>
+        <textarea id="resultOutput" rows="9" readonly placeholder="El prompt optimizado aparecerá aquí."></textarea>
+      </section>
+
+      <div class="actions">
+        <button id="copyButton" class="secondary" type="button" disabled>Copiar</button>
+        <button id="clearButton" class="ghost" type="button">Limpiar</button>
+      </div>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

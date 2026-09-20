@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configuración · Prompt Optimizer</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <h1>Configuración de IA</h1>
+      <p>Indica la URL de tu proxy de IA. El proxy debe conservar la clave del proveedor en el servidor, nunca en esta extensión.</p>
+      <form id="settingsForm">
+        <label for="aiEndpoint">Endpoint del proxy</label>
+        <input id="aiEndpoint" type="url" placeholder="https://mi-servidor.example/api/optimize" required>
+        <label for="proxyToken">Token del proxy</label>
+        <input id="proxyToken" type="password" autocomplete="off" placeholder="Token de acceso emitido por tu proxy" required>
+        <small>Envía un token propio al proxy, nunca una clave del proveedor de IA. El endpoint responde <code>{ "result": "…" }</code> o <code>{ "markdown": "…" }</code>.</small>
+        <button type="submit">Guardar configuración</button>
+        <output id="message" role="status" aria-live="polite"></output>
+      </form>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

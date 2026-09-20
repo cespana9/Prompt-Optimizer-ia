@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Prompt Optimizer",
+  "description": "Transforma prompts en Markdown claro y estructurado mediante un servicio de IA configurado por el usuario.",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "Prompt Optimizer",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage"],
+  "optional_host_permissions": ["https://*/*", "http://localhost/*"]
+}
