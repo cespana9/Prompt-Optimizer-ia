@@ -131,7 +131,7 @@ Este modo es para el mismo ordenador: no expongas el puerto 8787 en la red.
 El proxy también funciona con LiteLLM o cualquier servidor compatible con `POST /v1/chat/completions`. Para una configuración con URL `http://172.16.2.193:4000/v1` y modelo `EM-IA-Code`, usa en `.dev.vars`:
 
 ```text
-AI_BASE_URL=http://172.16.2.193:4000/v1
+AI_BASE_URL=http://[LITELLMSERVER]:[PORT]/v1
 AI_API_KEY=TU_TOKEN_DE_LITELLM
 DEFAULT_PROVIDER=opencode
 DEFAULT_MODEL=EM-IA-Code
@@ -143,6 +143,6 @@ RATE_LIMIT_PER_DAY=100
 CLIENT_TOKEN_HASHES=EL_HASH_DE_TU_TOKEN_DEL_PROXY
 ```
 
-Aunque el proveedor se llame `local` en OpenCode, utiliza `DEFAULT_PROVIDER=opencode` aquí: es el adaptador genérico OpenAI-compatible del proxy y ese nombre no se envía a LiteLLM. La llamada final será `http://172.16.2.193:4000/v1/chat/completions`.
+Aunque el proveedor se llame `local` en OpenCode, utiliza `DEFAULT_PROVIDER=opencode` aquí: es el adaptador genérico OpenAI-compatible del proxy y ese nombre no se envía a LiteLLM. La llamada final será `http://[LITELLMSERVER]:[PORT]/v1/chat/completions`.
 
 El equipo donde ejecutas `npm run dev` debe poder acceder a esa IP privada. Si has compartido un token real, rótalo en LiteLLM y sustituye el valor local; nunca lo guardes en la extensión ni en Git.
